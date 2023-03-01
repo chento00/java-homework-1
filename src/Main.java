@@ -68,7 +68,7 @@ public class Main {
                                                 System.out.print("Enter your name : ");
                                                 scanner.nextLine();
                                                 String name=scanner.nextLine();
-                                                System.out.println("Name : "+name+" buy successfully !!");
+                                                System.out.println("Name : "+name+" at room "+buyRoom+" floor "+buyFloor+"   buy successfully !!");
                                                 condo[buyRoom-1][buyFloor-1]=name;
                                                 break;
                                             }
@@ -208,7 +208,7 @@ public class Main {
                                 System.exit(0);
                             }break;
                             default:{
-                                System.out.println("");
+                                System.out.println("Your input is incorrect try agin !!");
                             }
                         }
                     }while (true);
