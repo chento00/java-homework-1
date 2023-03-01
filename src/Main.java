@@ -22,7 +22,7 @@ public class Main {
                     System.out.println("=>Number of Floor : "+sizeFloor+" floors");
                     System.out.println("=>Number of Room  : "+sizeRoom+" rooms");
                     System.out.println("Total Condo : "+(sizeFloor*sizeRoom)+" condos");
-                    String [][]condo=new String[sizeRoom][sizeFloor];
+                    String [][]condo=new String[sizeFloor][sizeRoom];
                     do {
                         System.out.println("================Welcome to PP Cono===============");
                         System.out.println("1. Buy Condo");
@@ -42,7 +42,7 @@ public class Main {
                                     int buyRoom,buyFloor;
                                     System.out.print("Enter your desired floor (1 - "+sizeFloor+") : ");
                                     buyFloor=scanner.nextInt();
-                                    if(buyFloor > sizeRoom || buyFloor <0){
+                                    if(buyFloor > sizeFloor || buyFloor <0){
                                         System.out.println("       FLOOR RANG START 1-"+sizeFloor);
                                         System.out.println("Press Enter to continue...");
                                         scanner.nextLine();
@@ -58,7 +58,7 @@ public class Main {
                                             scanner.nextLine();
                                             break;
                                         }else{
-                                            if(condo[buyRoom-1][buyFloor-1] != null){
+                                            if(condo[buyFloor-1][buyRoom-1] != null){
                                                 System.out.println("room  "+buyRoom+" floor "+buyFloor+" is has been bought by someone else already...");
                                                 System.out.println("Press \" Enter \" to continue...");
                                                 scanner.nextLine();
@@ -69,7 +69,7 @@ public class Main {
                                                 scanner.nextLine();
                                                 String name=scanner.nextLine();
                                                 System.out.println("Name : "+name+" at room "+buyRoom+" floor "+buyFloor+"   buy successfully !!");
-                                                condo[buyRoom-1][buyFloor-1]=name;
+                                                condo[buyFloor-1][buyRoom-1]=name;
                                                 break;
                                             }
                                         }
@@ -95,7 +95,7 @@ public class Main {
                                             System.out.print("Press enter to continue...!");
                                             break;
                                         }else{
-                                            if(condo[roomSell-1][floorSell-1] == null) {
+                                            if(condo[floorSell-1][roomSell-1] == null) {
                                                 System.out.println("CANNOT SELL THE CONDO, CAUSE YOU DON'T HAVE THE OWNERSHIP!");
                                                 System.out.print("Press \"Enter\" to continue...");
                                                 scanner.nextLine();
@@ -108,7 +108,7 @@ public class Main {
                                                 int val=scanner.nextInt();
                                                 if(val==1){
                                                     System.out.println("CONGRATULATION !! YOU HAVE SUCCESSFULLY SELL YOUR CONDO");
-                                                    condo[roomSell-1][floorSell-1]=null;
+                                                    condo[floorSell-1][roomSell-1]=null;
                                                     System.out.println("Press \"Enter\" to continue ...");
                                                     scanner.nextLine();
                                                     scanner.nextLine();
