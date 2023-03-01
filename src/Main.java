@@ -146,11 +146,11 @@ public class Main {
                                             System.out.println("=============Search Condo by Owner's Name==============");
                                             System.out.print("Enter owner name to search : ");
                                             scanner.nextLine();
-                                            String name=scanner.nextLine();
+                                            String name=scanner.nextLine().toLowerCase();
                                             for(int i=0;i<condo.length;i++){
                                                 for(int j=0;j<condo[i].length;j++){
-                                                    if(name.equals(condo[i][j])){
-                                                        System.out.println("Owner name : "+name+" is stays in Room no : "+(i+1)+" floor no : "+(j+1));
+                                                    if(name.equals(condo[i][j].toLowerCase())){
+                                                        System.out.println("Owner name : "+condo[i][j]+" is stays in Room no : "+(i+1)+" floor no : "+(j+1));
                                                         check=true;
                                                     }
                                                 }
